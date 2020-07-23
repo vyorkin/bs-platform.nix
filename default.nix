@@ -4,7 +4,7 @@ with pkgs;
   bs-platform4 = import ./build-bs-platform.nix {
     inherit stdenv fetchFromGitHub ninja runCommand nodejs python3;
     version = "4.0.4";
-    ocaml-version = "4.06.1";
+    ocaml-version = "4.02.3";
     src = fetchFromGitHub {
         owner = "BuckleScript";
         repo = "bucklescript";
@@ -16,7 +16,7 @@ with pkgs;
   bs-platform5 = import ./build-bs-platform.nix {
     inherit stdenv fetchFromGitHub ninja runCommand nodejs python3;
     version = "5.2.0";
-    ocaml-version = "4.06.1";
+    ocaml-version = "4.02.3";
     src = fetchFromGitHub {
         owner = "BuckleScript";
         repo = "bucklescript";
