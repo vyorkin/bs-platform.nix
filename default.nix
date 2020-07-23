@@ -1,6 +1,30 @@
 { pkgs ? import <nixpkgs> {} }:
 with pkgs;
 {
+  bs-platform4 = import ./build-bs-platform.nix {
+    inherit stdenv fetchFromGitHub ninja runCommand nodejs python3;
+    version = "4.0.4";
+    ocaml-version = "4.06.1";
+    src = fetchFromGitHub {
+        owner = "BuckleScript";
+        repo = "bucklescript";
+        rev = "c73360c990acbbc2a7f31bcdcc40f1903a827f6a";
+        sha256 = "0x12lgkc3nb9n2vj34hnpzqv6inj4gi00q8524mk0hj101xmx3nm";
+        fetchSubmodules = true;
+    };
+  };
+  bs-platform5 = import ./build-bs-platform.nix {
+    inherit stdenv fetchFromGitHub ninja runCommand nodejs python3;
+    version = "5.2.0";
+    ocaml-version = "4.06.1";
+    src = fetchFromGitHub {
+        owner = "BuckleScript";
+        repo = "bucklescript";
+        rev = "48f2350886d30b4310472face0c21f618422cdf9";
+        sha256 = "0grzbr2ah490v052cp038ri7n5z23n74ic26rdbc69zgp4djzrb3";
+        fetchSubmodules = true;
+    };
+  };
   bs-platform6 = import ./build-bs-platform.nix {
     inherit stdenv fetchFromGitHub ninja runCommand nodejs python3;
     version = "6.2.1";
